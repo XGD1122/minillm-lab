@@ -1,0 +1,16 @@
+# Experiment A: Mini Pretrain (Causal LM continued training)
+model: "distilgpt2"
+dataset: "wikitext"
+dataset_subset: "wikitext-2-raw-v1"
+max_steps: 500
+smoke_steps: 50
+batch_size: 2
+gradient_accumulation_steps: 4
+block_size: 256
+learning_rate: 5.0e-5
+weight_decay: 0.01
+eval_steps: 100
+save_steps: 200
+output_dir: "outputs/pretrain"
+log_dir: "runs/pretrain"
+device: "cuda"

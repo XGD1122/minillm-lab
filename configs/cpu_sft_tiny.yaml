@@ -1,0 +1,16 @@
+# Experiment B: SFT (Supervised Fine-Tuning)
+model: "distilgpt2"
+dataset: "json"
+data_path: "data/samples/sft_samples.json"
+max_steps: 500
+smoke_steps: 50
+batch_size: 2
+gradient_accumulation_steps: 4
+block_size: 256
+learning_rate: 5.0e-5
+weight_decay: 0.01
+eval_steps: 100
+save_steps: 200
+output_dir: "outputs/sft"
+log_dir: "runs/sft"
+device: "cuda"

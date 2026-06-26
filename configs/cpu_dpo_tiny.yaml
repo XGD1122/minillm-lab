@@ -1,0 +1,18 @@
+# Experiment C: DPO (Direct Preference Optimization)
+model: "distilgpt2"
+sft_model_path: "outputs/sft"  # optional: start from SFT checkpoint
+dataset: "json"
+data_path: "data/samples/dpo_samples.json"
+max_steps: 500
+smoke_steps: 50
+batch_size: 1
+gradient_accumulation_steps: 4
+block_size: 256
+learning_rate: 5.0e-5
+weight_decay: 0.01
+beta: 0.1  # DPO temperature
+eval_steps: 100
+save_steps: 200
+output_dir: "outputs/dpo"
+log_dir: "runs/dpo"
+device: "cuda"
